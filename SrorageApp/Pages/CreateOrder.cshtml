@@ -1,0 +1,49 @@
+﻿@page
+@model SrorageApp.Pages.CreateOrderModel
+@{
+}
+
+<h1>Καταχώρισε τα στοιχεία σου</h1>
+
+<form method="post">
+   
+    <div class="form-group">
+        <label class="control-label">Χρήστης</label>
+        <input class="form-control" value="@User.Identity?.Name" readonly />
+    </div>
+
+ 
+    <input type="hidden" asp-for="Order.ProductId" value="@Model.Product.Id" />
+
+  
+    <div class="form-group">
+        <label class="control-label">Προϊόν</label>
+        <input class="form-control" value="@Model.Product.Name (@Model.Product.Id)" readonly />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Quantity" class="control-label">Ποσότητα</label>
+        <input asp-for="Order.Quantity" class="form-control" />
+        <span asp-validation-for="Order.Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Address" class="control-label">(Διεύθυνση) Όνομα Καταστήματος</label>
+        <input asp-for="Order.Address" class="form-control" />
+        <span asp-validation-for="Order.Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Contact" class="control-label">Επικοινωνία</label>
+        <input asp-for="Order.Contact" class="form-control" />
+        <span asp-validation-for="Order.Contact" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.FullName" class="control-label">Πλήρες Όνομα</label>
+        <input asp-for="Order.FullName" class="form-control" />
+        <span asp-validation-for="Order.FullName" class="text-danger"></span>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <button type="submit" class="btn btn-primary">Παραγγελία</button>
+</form>

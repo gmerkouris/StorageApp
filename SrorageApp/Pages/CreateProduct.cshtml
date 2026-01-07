@@ -1,0 +1,42 @@
+﻿@page
+@model SrorageApp.Pages.CreateProductModel
+@{
+}
+
+
+<h1>Καταχώριση νέου προιόντος</h1>
+
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="Product.Id" class="control-label">Κωδικός Προιόντος</label>
+        <input asp-for="Product.Id" class="form-control" />
+        <span asp-validation-for="Product.Id" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Product.Name" class="control-label">Ονομασία Προιόντος</label>
+        <input asp-for="Product.Name" class="form-control" />
+        <span asp-validation-for="Product.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Product.Description" class="control-label">Χαρακτηριστικά</label>
+        <input asp-for="Product.Description" class="form-control" />
+        <span asp-validation-for="Product.Description" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Product.Price" class="control-label">Τιμή</label>
+        <input asp-for="Product.Price" class="form-control" />
+        <span asp-validation-for="Product.Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Product.Stock" class="control-label">Απόθεμα</label>
+        <input asp-for="Product.Stock" class="form-control" />
+        <span asp-validation-for="Product.Stock" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Καταχώριση</button>
+</form>

@@ -1,0 +1,157 @@
+﻿@page
+@model SrorageApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Κεντρική Αποθήκη Hardware";
+}
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Κεντρική Αποθήκη Hardware</title>
+
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+</head>
+
+<body>
+
+  
+    <div class="computers_section layout_padding">
+        <div class="container text-center">
+            <h1 class="computers_taital">Κεντρική Αποθήκη Hardware</h1>
+        </div>
+    </div>
+
+   
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-md-8">
+                <input type="text"
+                       id="searchInput"
+                       class="form-control"
+                       placeholder="Αναζήτηση προϊόντος (π.χ. SSD, Intel, RAM...)"
+                       onkeypress="handleEnter(event)">
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-secondary w-100" onclick="clearSearch()">
+                    Καθαρισμός
+                </button>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="computers_section_2">
+        <div class="container-fluid">
+            <div class="computer_main">
+                <div class="row">
+
+                    @foreach (var item in Model.Products)
+                    {
+                        if (item.Stock > 0)
+                        {
+                            <div class="col-md-4 product-item"
+                                 data-description="@item.Description"
+                                 data-code="@item.Id">
+
+                                <div class="computer_img">
+                                    <img src="~/images/computer-img.png" />
+                                </div>
+
+                                <h4 class="computer_text">@item.Name</h4>
+
+                                <div class="computer_text_main">
+                                    <p>@item.Description</p>
+                                </div>
+
+                                <h6 class="computer_text">
+                                    @item.Price €
+                                </h6>
+
+                                <h6 class="computer_text">
+                                    Κωδικός: @item.Id
+                                </h6>
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="cart_bt_1">
+                                        <a asp-page="./CreateOrder"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-primary">
+                                            Παραγγελία
+                                        </a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="cart_bt_1">
+                                        <a asp-area="Identity"
+                                           asp-page="/Account/Login"
+                                           class="btn btn-outline-primary">
+                                            Παραγγελία
+                                        </a>
+                                    </div>
+                                }
+
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="copyright_section mt-5">
+        <div class="container text-center">
+            <p>Εργασία ASP.NET Web App (.NET 10)</p>
+        </div>
+    </div>
+
+    <script>
+        function filterProducts() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let products = document.getElementsByClassName("product-item");
+
+            for (let i = 0; i < products.length; i++) {
+
+                let description = products[i]
+                    .getAttribute("data-description")
+                    .toLowerCase();
+
+                let code = products[i]
+                    .getAttribute("data-code")
+                    .toLowerCase();
+
+                if (description.includes(input) || code.includes(input)) {
+                    products[i].style.display = "block";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+        }
+
+        function handleEnter(event) {
+            if (event.key === "Enter") {
+                filterProducts();
+            }
+        }
+
+        function clearSearch() {
+            document.getElementById("searchInput").value = "";
+            let products = document.getElementsByClassName("product-item");
+
+            for (let i = 0; i < products.length; i++) {
+                products[i].style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
