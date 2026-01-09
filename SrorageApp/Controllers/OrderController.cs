@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SrorageApp.Data;
-using SrorageApp.Models;
+using StorageApp.Data;
+using StorageApp.Models;
 
-namespace SrorageApp.Controllers
+namespace StorageApp.Controllers
 {
     public class OrderController : Controller
     {

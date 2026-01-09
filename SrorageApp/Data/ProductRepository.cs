@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SrorageApp.Models;
+using StorageApp.Models;
 
-namespace SrorageApp.Data
+namespace StorageApp.Data
 {
     public class ProductRepository
     {

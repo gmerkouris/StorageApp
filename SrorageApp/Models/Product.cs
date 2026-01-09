@@ -1,4 +1,4 @@
-﻿namespace SrorageApp.Models
+﻿namespace StorageApp.Models
 {
     public class Product
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace SrorageApp.Areas.Identity.Pages.Account.Manage
+namespace StorageApp.Areas.Identity.Pages.Account.Manage
 {
     public static class ManageNavPages
     {

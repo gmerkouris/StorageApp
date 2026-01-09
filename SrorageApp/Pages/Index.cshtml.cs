@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SrorageApp.Data;
-using SrorageApp.Models;
+using StorageApp.Data;
+using StorageApp.Models;
 
-namespace SrorageApp.Pages
+namespace StorageApp.Pages
 {
     public class IndexModel : PageModel
     {

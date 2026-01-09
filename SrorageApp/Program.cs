@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SrorageApp.Data;
+using StorageApp.Data;
 using Microsoft.EntityFrameworkCore;
-using SrorageApp.Data;
+using StorageApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

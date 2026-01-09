@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SrorageApp.Data;
-using SrorageApp.Models;
+using StorageApp.Data;
+using StorageApp.Models;
 using Xunit;
 
-namespace SrorageApp.UnitTest
+namespace StorageApp.UnitTest
 {
     public class ProductUnitTests
     {

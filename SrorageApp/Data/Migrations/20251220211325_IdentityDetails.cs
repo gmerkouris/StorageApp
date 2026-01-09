@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace SrorageApp.Data.Migrations
+namespace StorageApp.Data.Migrations
 {
     /// <inheritdoc />
     public partial class IdentityDetails : Migration

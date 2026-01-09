@@ -1,9 +1,9 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using SrorageApp.Models;
+using StorageApp.Models;
 using System.Security.Claims;
 
-namespace SrorageApp.Data
+namespace StorageApp.Data
 {
     public class OrderRepository
     {

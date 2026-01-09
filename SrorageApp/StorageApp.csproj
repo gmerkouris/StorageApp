@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <IsTestProject>true</IsTestProject>
-    <UserSecretsId>aspnet-SrorageApp-6b1f637b-8e48-4245-8826-ad7ec4fecec1</UserSecretsId>
+    <UserSecretsId>aspnet-StorageApp-6b1f637b-8e48-4245-8826-ad7ec4fecec1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

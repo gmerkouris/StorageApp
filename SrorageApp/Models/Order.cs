@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace SrorageApp.Models
+namespace StorageApp.Models
 {
     public class Order
     {
